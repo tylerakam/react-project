@@ -59,7 +59,7 @@ export default function Gallery() {
                 {showMore ? 'Hide' : 'Show'} details
             </button>
             {showMore && <p>{thumb.description}</p>}
-            <iframe width="560" height="315"
+            <iframe width="560" height="315" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="true"
                 src={thumb.url}
                 alt={thumb.alt}
             />
