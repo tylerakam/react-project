@@ -59,7 +59,7 @@ export default function Gallery() {
                 {showMore ? 'Hide' : 'Show'} details
             </button>
             {showMore && <p>{thumb.description}</p>}
-            <img
+            <iframe width="560" height="315"
                 src={thumb.url}
                 alt={thumb.alt}
             />
