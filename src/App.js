@@ -23,8 +23,36 @@ import './App.css';
 // }
 import { useState } from 'react';
 import { thumbList } from './data.js';
+import React, { Component } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-export default function Gallery() {
+import Home from './components/Home';
+import About from './components/About';
+import Contact from './components/Contact';
+import Error from './components/Error';
+import Navigation from './components/Navigation';
+
+class App extends Component {
+    render() {
+        return (
+            <BrowserRouter>
+                <div>
+                    <Navigation />
+                    <Routes>
+                        <Route path="./app.js"/>
+                        <Route path="/about" component={About}/>
+                        <Route path="/contact" component={Contact}/>
+                        <Route component={Error}/>
+                    </Routes>
+                </div>
+            </BrowserRouter>
+        );
+    }
+}
+
+export default App;
+
+export function Gallery() {
     const [index, setIndex] = useState(0);
     const [showMore, setShowMore] = useState(false);
     const hasNext = index < thumbList.length - 1;
