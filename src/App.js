@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
 // function App() {
@@ -21,50 +21,75 @@ import './App.css';
 //     </div>
 //   );
 // }
-import { useState } from 'react';
-import { thumbList } from './data.js';
+// import { useState } from 'react';
+// import { thumbList } from './data.js';
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-export default function Gallery() {
-    const [index, setIndex] = useState(0);
-    const [showMore, setShowMore] = useState(false);
-    const hasNext = index < thumbList.length - 1;
+import Navbar from "./components/Navbar/NavbarElements";
 
-    function handleNextClick() {
-        if (hasNext) {
-            setIndex(index + 1);
-        } else {
-            setIndex(0);
-        }
-    }
+import Home from "./pages";
+import Gallery from "./pages/gallery";
+import Projects from "./pages/projects";
+import Resume from "./pages/resume";
 
-    function handleMoreClick() {
-        setShowMore(!showMore);
-    }
-
-    let thumb = thumbList[index];
+function App() {
     return (
-        <>
-            <h1>Recent Chiefofbricks Video Gallery</h1>
-            <button onClick={handleNextClick}>
-                Next
-            </button>
-            <h2>
-                <i>{thumb.name} </i>
-                by {thumb.artist}
-            </h2>
-            <h3>
-                ({index + 1} of {thumbList.length})
-            </h3>
-            <button onClick={handleMoreClick}>
-                {showMore ? 'Hide' : 'Show'} details
-            </button>
-            {showMore && <p>{thumb.description}</p>}
-            <iframe width="560" height="315" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="true"
-                src={thumb.url}
-                alt={thumb.alt}
-            />
-        </>
+        <BrowserRouter>
+            <Navbar />
+            <Routes>
+                <Route exact path="/" element={<Home />} />
+                <Route path="/gallery" element={<Gallery />} />
+                <Route path="/projects" element={<Projects />} />
+                <Route path="/resume" element={<Resume />} />
+            </Routes>
+        </BrowserRouter>
     );
 }
 
+export default App;
 
+// export function Gallery() {
+//     const [index, setIndex] = useState(0);
+//     const [showMore, setShowMore] = useState(false);
+//     const hasNext = index < thumbList.length - 1;
+//
+//     function handleNextClick() {
+//         if (hasNext) {
+//             setIndex(index + 1);
+//         } else {
+//             setIndex(0);
+//         }
+//     }
+//
+//     function handleMoreClick() {
+//         setShowMore(!showMore);
+//     }
+//
+//     let thumb = thumbList[index];
+//     return (
+//         <>
+//             <h1>Recent Chiefofbricks Video Gallery</h1>
+//             <button onClick={handleNextClick}>
+//                 Next
+//             </button>
+//             <h2>
+//                 <i>{thumb.name} </i>
+//                 by {thumb.artist}
+//             </h2>
+//             <h3>
+//                 ({index + 1} of {thumbList.length})
+//             </h3>
+//             <button onClick={handleMoreClick}>
+//                 {showMore ? 'Hide' : 'Show'} details
+//             </button>
+//             {showMore && <p>{thumb.description}</p>}
+//             <iframe width="560" height="315" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="true"
+//                 src={thumb.url}
+//                 alt={thumb.alt}
+//             />
+//         </>
+//     );
+// }
+//
+//
