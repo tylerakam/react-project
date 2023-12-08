@@ -31,15 +31,24 @@ import '../App.css';
 import { useState } from 'react';
 import { projList } from '../data2.js';
 import React from 'react';
+import {thumbList} from "../data";
 //import { BrowserRouter, Route, Routes } from 'react-router-dom';
 export default function Projects() {
     const [index, setIndex] = useState(0);
     const [showMore, setShowMore] = useState(false);
     const hasNext = index < projList.length - 1;
+    const hasLast = index > 0 || index === thumbList.length;
 
     function handleNextClick() {
         if (hasNext) {
             setIndex(index + 1);
+        } else {
+            setIndex(0);
+        }
+    }
+    function handleLastClick() {
+        if (hasLast) {
+            setIndex(index - 1);
         } else {
             setIndex(0);
         }
@@ -52,11 +61,12 @@ export default function Projects() {
     let thumb = projList[index];
 
     return (
-        <>
+        <> <div class="gallery">
             <h1>School Related Projects and Documentation</h1>
             <button onClick={handleNextClick}>
                 Next
             </button>
+            <button onClick={handleLastClick}>Previous</button>
             <h2>
                 <i>{thumb.name} </i>
                 by {thumb.artist}
@@ -67,7 +77,9 @@ export default function Projects() {
             <button onClick={handleMoreClick}>
                 {showMore ? 'Hide' : 'Show'} details
             </button>
+
             {showMore && <p>{thumb.description}</p>}
+        </div>
             <iframe width="560" height="315" title="YouTube video player"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen="true"

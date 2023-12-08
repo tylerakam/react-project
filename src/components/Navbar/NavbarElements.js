@@ -6,6 +6,9 @@ const Navbar = () => {
         <>
             <Nav>
                 <NavMenu>
+                    <NavLink to="/react-project" active activeStyle>
+                        Home
+                    </NavLink>
                     <NavLink to="/gallery" activeStyle>
                         Gallery
                     </NavLink>
@@ -14,6 +17,9 @@ const Navbar = () => {
                     </NavLink>
                     <NavLink to="/resume" activeStyle>
                         Resume
+                    </NavLink>
+                    <NavLink to="/about" activeStyle>
+                        About
                     </NavLink>
 
                 </NavMenu>

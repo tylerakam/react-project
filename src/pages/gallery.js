@@ -29,10 +29,18 @@ export default function Gallery() {
     const [index, setIndex] = useState(0);
     const [showMore, setShowMore] = useState(false);
     const hasNext = index < thumbList.length - 1;
+    const hasLast = index > 0 || index === thumbList.length;
 
     function handleNextClick() {
         if (hasNext) {
             setIndex(index + 1);
+        } else {
+            setIndex(0);
+        }
+    }
+    function handleLastClick() {
+        if (hasLast) {
+            setIndex(index - 1);
         } else {
             setIndex(0);
         }
@@ -46,10 +54,11 @@ export default function Gallery() {
 
         return (
             <>
+                <div class="gallery">
                 <h1>Recent Chiefofbricks Video Gallery</h1>
                 <button onClick={handleNextClick}>
                     Next
-                </button>
+                </button> <button onClick={handleLastClick}>Previous</button>
                 <h2>
                     <i>{thumb.name} </i>
                     by {thumb.artist}
@@ -60,13 +69,16 @@ export default function Gallery() {
                 <button onClick={handleMoreClick}>
                     {showMore ? 'Hide' : 'Show'} details
                 </button>
+
                 {showMore && <p>{thumb.description}</p>}
+                </div>
                 <iframe width="560" height="315" title="YouTube video player"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen="true"
                         src={thumb.url}
                         alt={thumb.alt}
                 />
+
             </>
         );
     }

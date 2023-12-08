@@ -25,3 +25,36 @@ code {
 h1 {
   font-family: "Bauhaus 93"
 }
+div.resume {
+  background: white;
+  padding: 2em;
+}
+div.gallery{
+  background: white;
+  padding: 2em;
+  border-radius: 5px;
+}
+iframe {
+  display: block;
+}
+
+div.navbar {
+  border-radius: 5px;
+  margin: auto;
+  text-align: center;
+}
+div.home {
+  background: white;
+  font-size: 2em;
+  /*border-radius: 20px;*/
+  padding: 2em;
+}
+div.home p {
+  font-family: "Berlin Sans FB";
+}
+div.about {
+  /*display: flex;*/
+}
+img {
+  border-radius: 3px;
+}

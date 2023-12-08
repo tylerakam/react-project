@@ -28,22 +28,29 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Navbar from "./components/Navbar/NavbarElements";
 
-import Home from "./pages";
+import Home from "./pages/index";
 import Gallery from "./pages/gallery";
 import Projects from "./pages/projects";
 import Resume from "./pages/resume";
+import About from "./pages/about"
 
 function App() {
-    return (
+    return (<>
+            <div class="navbar">
         <BrowserRouter>
             <Navbar />
             <Routes>
-                <Route exact path="/" element={<Home />} />
+                <Route index element={<Home />} />
+                <Route path="/react-project" element={<Home/>} />
                 <Route path="/gallery" element={<Gallery />} />
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/resume" element={<Resume />} />
+                <Route path="/about" element={<About />} />
             </Routes>
         </BrowserRouter>
+            </div>
+        {/*<h1>Test</h1>*/}
+        </>
     );
 }
 

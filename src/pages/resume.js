@@ -3,7 +3,7 @@ import React from "react";
 
 const Resume = () => {
     return (
-        <div>
+        <div class="resume">
     <h1>Resume - Tyler Akam</h1>
 
     <p>Junior at Penn State Behrend, Amateur Filmmaker, Eagle Scout, Independent Artist</p>
