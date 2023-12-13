@@ -10,6 +10,7 @@ const About = () => {
             <img src="C:\Users\Tyler\Documents\Github\react-project\src\images\tyler-akam.jpg" alt="Tyler Akam"/>
             </div>
             <p>Tyler can be contacted through his email: takam2020.ta@gmail.com</p>
+            <p>This website is located on GitHub <a href="https://github.com/tylerakam/react-project/tree/navbar">here</a></p>
         </div>
     );
 };
