@@ -56,9 +56,9 @@ export default function Gallery() {
             <>
                 <div class="gallery">
                 <h1>Recent Chiefofbricks Video Gallery</h1>
-                <button onClick={handleNextClick}>
+                 <button onClick={handleLastClick}>Previous</button><button onClick={handleNextClick}>
                     Next
-                </button> <button onClick={handleLastClick}>Previous</button>
+                </button>
                 <h2>
                     <i>{thumb.name} </i>
                     by {thumb.artist}

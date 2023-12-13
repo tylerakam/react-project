@@ -32,7 +32,7 @@ div.resume {
 div.gallery{
   background: white;
   padding: 2em;
-  border-radius: 5px;
+  /*border-radius: 5px;*/
 }
 iframe {
   display: block;

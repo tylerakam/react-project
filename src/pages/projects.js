@@ -63,10 +63,11 @@ export default function Projects() {
     return (
         <> <div class="gallery">
             <h1>School Related Projects and Documentation</h1>
-            <button onClick={handleNextClick}>
-                Next
-            </button>
+
             <button onClick={handleLastClick}>Previous</button>
+            <button onClick={handleNextClick}>
+            Next
+        </button>
             <h2>
                 <i>{thumb.name} </i>
                 by {thumb.artist}
